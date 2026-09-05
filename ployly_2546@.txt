@@ -8,3 +8,8 @@ sb_publishable_F8hViCSuQS4UeNlXNARdsQ_ZwU5nYBp
 
 [https://rdmxifuufnkgfkrbecji.supabase.co]
 (https://rdmxifuufnkgfkrbecji.supabase.co)
+
+
+
+
+postgresql://postgres.rdmxifuufnkgfkrbecji:ployly_2546%40@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres
