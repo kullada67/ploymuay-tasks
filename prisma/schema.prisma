@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// สร้างตารางสำหรับเก็บข้อมูล "งาน" (Task)
+model Task {
+  id          Int      @id @default(autoincrement())
+  title       String   // ชื่องาน
+  date        String   // วันที่ของงาน (เก็บเป็นรูปแบบ "YYYY-MM-DD" เพื่อให้เทียบกับปฏิทินได้ง่าย)
+  time        String?  // เวลาที่ต้องทำ (เช่น "14:00")
+  
+  // ส่วนสำหรับจัดการไฟล์ที่แนบมา
+  fileUrl     String?  // ลิงก์สำหรับกดดาวน์โหลดหรือดูไฟล์จาก Supabase Storage
+  fileName    String?  // ชื่อไฟล์ต้นฉบับ (เช่น "report.pdf")
+  
+  completed   Boolean  @default(false) // สถานะว่างานนี้ทำเสร็จหรือยัง
+  
+  createdAt   DateTime @default(now()) // บันทึกเวลาที่สร้างงานนี้
+  updatedAt   DateTime @updatedAt      // บันทึกเวลาที่มีการแก้ไขล่าสุด
+}

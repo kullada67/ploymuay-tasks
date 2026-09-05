@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. ประกาศเรียกใช้งานฟอนต์จากโฟลเดอร์ public/fonts/ */
+@font-face {
+  font-family: 'MyCuteFont';
+  src: url('/fonts/TCS 4Tutor Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. ตั้งค่าให้ทั้งเว็บใช้ฟอนต์นี้เป็นหลัก */
+body {
+  background-color: #fce4ec;
+  color: #52525b;
+  font-family: 'MyCuteFont', sans-serif !important;
+}
+/* ---------------- แอนิเมชันฟองสบู่ตอนคลิก ---------------- */
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0px) scale(0.4);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-float-bubble {
+  animation: floatBubble 1.2s ease-out forwards;
+}
+
+/* ---------------- แอนิเมชันกากเพชร/ดาวร่วง ---------------- */
+@keyframes fallAndSpin {
+  0% {
+    transform: translateY(0vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ---------------- ตกแต่งปฏิทินให้น่ารัก (ตัวหนังสือสี #f8bbd0) ---------------- */
+.react-calendar {
+  border: none !important;
+  font-family: inherit !important;
+  width: 100% !important;
+  background: white !important;
+  padding: 10px;
+  color: #f8bbd0 !important;
+}
+
+.react-calendar__navigation button {
+  color: #f8bbd0 !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 12px;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #fff0f5 !important;
+}
+
+/* หัวตารางวัน (MON - SUN) */
+.react-calendar__month-view__weekdays__weekday {
+  color: #f8bbd0 !important;
+  text-decoration: none !important;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
+
+/* ตัวเลขวันที่ปกติ และวันเสาร์-อาทิตย์ */
+.react-calendar__tile, 
+.react-calendar__month-view__days__day--weekend {
+  color: #f8bbd0 !important;
+}
+
+/* วันที่กำลังคลิกเลือก */
+.react-calendar__tile--active {
+  background: #f472b6 !important;
+  color: white !important;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* วันปัจจุบัน */
+.react-calendar__tile--now {
+  background: #fce4ec !important;
+  color: #f8bbd0 !important;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* เวลานำเมาส์ไปชี้ */
+.react-calendar__tile:hover {
+  background: #fff0f5 !important;
+  border-radius: 12px;
+  color: #f472b6 !important;
+}
